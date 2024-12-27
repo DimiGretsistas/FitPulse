@@ -1,6 +1,24 @@
-import React from 'react'
+import React from "react";
 
 export default function SectionWrapper(props) {
-    const {children} = props;
-  return <div>{children}</div>;
+  const { children, header, title } = props;
+  return (
+    <section className="min-h-screen flex flex-col gap-10">
+      <div className="bg-white py-10 flex flex-col gap-2 justify-center items-center text-blue-600">
+        <p
+          className="font-semi-bold text-3xl sm:text-4l md:text-5xl
+          lg:text-6xl">
+          {header}
+        </p>
+        <h2
+          className="font-semi-bold text-xl sm:text-2xl md:text-3xl
+          lg:text-4xl text-red-600">
+          {title}
+        </h2>
+      </div>
+      <div className="max-w-[800px] w-full flex flex-col mx-auto gap-10 p-4">
+        {children}
+      </div>
+    </section>
+  );
 }
